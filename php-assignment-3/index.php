@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> 
     <meta charset="UTF-8">
     <meta Name="viewport" content="width=device-width, initial-scale=1.0">
     <meta Agep-equiv="X-UA-Compatible" content="ie=edge">
@@ -13,68 +13,33 @@
     <main>
         <table>
             <?php
-                $status = "Active";
+                $status = 1;
                 $students = [
-                            [
-                                "Name" => "Adnan",
-                                "Age" => "27",
-                                "DateOfBirth" => "20/nov/2019",
-                                "Status" => "Active",
-                            ],
-                            [
-                                "Name" => "Sami",
-                                "Age" => "15",
-                                "DateOfBirth" => "9/feb/2019",
-                                "Status" => "Active",
-                            ],
-                            [
-                                "Name" => "Shahzain",
-                                "Age" => "19",
-                                "DateOfBirth" => "19/feb/2019",
-                                "Status" => "Active",
-                            ],
+                            
                             [
                                 "Name" => "Sameer",
                                 "Age" => "40",
                                 "DateOfBirth" => "8/dec/2019",
-                                "Status" => "Active",
+                                "Status" => "1",
                             ],
                             [
                                 "Name" => "Amit",
                                 "Age" => "20",
                                 "DateOfBirth" => "5/oct/2019",
-                                "Status" => "Active",
+                                "Status" => "1",
                             ], 
                             [
                                 "Name" => "Adnan",
                                 "Age" => "27",
                                 "DateOfBirth" => "20/nov/2019",
-                                "Status" => "Inactive",
+                                "Status" => "2",
                             ],
                             [
-                                "Name" => "Sameer",
+                                "Name" => "Sam",
                                 "Age" => "40",
                                 "DateOfBirth" => "8/dec/2019",
-                                "Status" => "Inactive",
-                            ],
-                            [
-                                "Name" => "Amit",
-                                "Age" => "20",
-                                "DateOfBirth" => "5/oct/2019",
-                                "Status" => "Inactive",
-                            ], 
-                            [
-                                "Name" => "Moiz",
-                                "Age" => "13",
-                                "DateOfBirth" => "5/oct/2019",
-                                "Status" => "Inactive",
-                            ], 
-                            [
-                                "Name" => "Zaid",
-                                "Age" => "45",
-                                "DateOfBirth" => "5/oct/2019",
-                                "Status" => "Inactive",
-                            ], 
+                                "Status" => "2",
+                            ],   
                 ];
             ?>
             <thead>

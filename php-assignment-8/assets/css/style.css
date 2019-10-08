@@ -1,0 +1,56 @@
+*{
+    margin : 0px;
+    padding : 0px;
+    font-family: sans-serif;
+}
+body{
+    background-image: url(../images/download.jpg);
+}
+.login-form {
+    width: 100%;
+    text-align: center;
+}
+.heading-login{
+    width: 100%;
+    text-align: center;
+    color: #b1a18d;
+    margin: 158px 0px 20px;   
+}
+.email , .pass {
+    margin: 5px;
+    width: 16%;
+    outline: none;
+    color: #887358;
+    border: #c3b097 solid 1px;
+    padding: 7px;
+}
+.button {
+    width: 17%;
+    margin: 18px;
+    height: 35px;
+    background: #c3b097;
+    border: none;
+    color: white;
+}
+.table-headings {
+    color: #b1a18d;
+}
+table {
+    width: 100%;
+    text-align: center;
+    margin: 56px 0px;
+}
+
+.table-names {
+    color: #b3b3b3;
+}
+.button-anchor {
+    padding: 7px 59px;
+    margin: 125px;
+    border-radius: 3px;
+    background: #c3b097;
+    border: none;
+    color: white;
+    text-decoration: none;
+}
+

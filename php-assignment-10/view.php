@@ -11,11 +11,11 @@
     <?php
     
     if(isset($_COOKIE['student'])){
-        $std_id         =  $_GET['std'];
+        $std_id         = $_GET['std'];
         $decode         = base64_decode($_COOKIE['student']);
         $unserialize    = unserialize($decode);
 
-        foreach( $unserialize[$std_id] as $val )
+        foreach($unserialize[$std_id] as $val )
         {
             echo $val.'<br>';
         } 

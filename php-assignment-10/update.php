@@ -20,7 +20,6 @@
             $array3[] .= $val;
         } 
     }
-
     ?>
     <form method="POST">
         <label>Student Name:</label>

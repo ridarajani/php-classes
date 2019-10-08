@@ -11,32 +11,16 @@
 
     <?php
     session_start();
+    require("submit.php");
             $name       =   $_SESSION['Name']."<br>";
             $age        =   $_SESSION['Age']."<br>";
             $phonenum   =   $_SESSION['PhoneNumber']."<br>";
 
     ?>
-    <header>
-    </header>
-    <main>
-        <div>
-            <table>
-                <thead class="table-headings">
-                    <tr>
-                        <th>NAME</th>
-                        <th>AGE</th>
-                        <th>PHONE NUMBER</th>
-                    </tr>
-                </thead>
-                <tbody class="table-names">
-                    <tr>
+   
                         <td><?php echo $name ?></td>
                         <td><?php echo $age ?></td>
                         <td><?php echo $phonenum ?></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
         <div>
             <a class="button-anchor" href="logout.php">Logout</a>
         </div>

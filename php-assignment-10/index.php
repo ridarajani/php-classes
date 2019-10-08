@@ -7,8 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-
-
     <?php 
     $array = [
         [
@@ -56,7 +54,7 @@
             <input name="student_age"> 
         </div>
         <div>
-            <label>Student Number :</label>
+           <label>Student Number :</label>
             <input name="student_number">  
         </div>
         <div>
