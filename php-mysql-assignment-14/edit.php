@@ -11,16 +11,19 @@
     require("connection.php");
 ?>
     <form method="post">
-        <input name="edit_task_input" type="text" value="Edit your task here" >
+        <input name="edit_name" type="text" placeholder="edit product name" >
+        <input name="edit_color" type="text" placeholder="edit product color" >
+        <input name="edit_price" type="text" placeholder="edit product price" >
         <input name="edit-submit" type="submit" value="Add Task">
     </form>
     <?php
        if(isset($_REQUEST['edit-submit'])){
 
-            $input        =  $_REQUEST['edit_task_input'];
-            $update_id    = $_REQUEST['task_id'];
+            $edit_name        = $_REQUEST['edit_name'];
+            $edit_color        = $_REQUEST['edit_color'];
+            $edit_price        = $_REQUEST['edit_price'];
             
-            $update_query = "update my_inventory set item = '$input' where id = '$update_id' ";
+            $update_query = "update products set product_name = '$edit_name' , color = '$edit_color' , price = '$edit_price' where id = ".$_REQUEST['id'];
             
             $mysqli_update  =  mysqli_query($connection,$update_query);
 
@@ -31,5 +34,8 @@
             }
        }
     ?>
+    <div>
+        <p>Prepared by : Rida Rajani</p>
+    </div>
 </body>
 </html>
