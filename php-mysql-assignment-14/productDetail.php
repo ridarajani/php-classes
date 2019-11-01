@@ -55,61 +55,15 @@
         </form>
     </div>
 
-    <?php 
+    <?php    
+        $limit = 6;
+        $page = isset($_GET['page_num']) ? $_GET['page_num'] : 1;
+        $offset = ($page - 1)* $limit;
 
-    if(isset($_POST['submit_search']))
-    {
+        $query = "select * from products limit $offset,$limit";
+        $result_set = mysqli_query($connection,$query);
+        $products = mysqli_fetch_all($result_set,MYSQLI_ASSOC);
 
-        $name_query         = "" ;
-        $price_query        = "" ;
-        $color_query        = "" ;
-        $Count              = 0 ;
-        $WHERE              = "" ;
-        $AND                = "";
-        
-        
-        if(!empty(trim($_POST['productname'])))
-        {
-            if($Count)
-            {
-                $AND = " AND ";
-            }
-            $name_query  = $AND." product_name LIKE  '%" .$_POST['productname']. "%' ";
-            $Count++;
-        } 
-        if(!empty(trim($_POST['productprice'])))
-        {
-            if($Count)
-            {
-                $AND = " AND ";
-            }
-            $price_query  = $AND." price = ".$_POST['productprice'];
-            $Count++;
-        } 
-        if(!empty(trim($_POST['productcolor'])))
-        {              
-            if($Count)
-            {
-                $AND = " AND ";
-            }
-            $color_query         = $AND." color  LIKE  '%" .$_POST['productcolor']. "%' ";
-            $Count++;
-        } 
-        if($Count)
-        {
-            $WHERE = " WHERE ";
-        }
-        $query = " select * from products ".$WHERE.$name_query.$price_query.$color_query; 
-    }
-    else
-    {
-        $query = " select * from products "; 
-        
-    }
-
-    $result_set = mysqli_query($connection,$query);
-    $products = mysqli_fetch_all($result_set,MYSQLI_ASSOC);
-        
     ?>
      <h1> Product Listing </h1>  
     <form method="post">
@@ -123,15 +77,6 @@
                     <th>Action</th>
                 </tr>
             </thead>
-            <tfoot style="display: table-header-group !important;">
-                <tr>
-                    <th>Search</th>
-                    <th><input placeholder="Product Name" name="productname" value="<?php echo isset($_POST['productname'])  ? $_POST['productname'] : ""  ?>" ></th>
-                    <th><input placeholder="Product Color" name="productcolor" value="<?php echo isset($_POST['productcolor'])  ? $_POST['productcolor'] : ""  ?>"></th>
-                    <th><input placeholder="Product Price" name="productprice" value="<?php echo isset($_POST['productprice'])  ? $_POST['productprice'] : ""  ?>"></th>
-                    <th><input  type="submit" name="submit_search" value="Search"></th>
-                </tr>
-            </tfoot>
             <tbody> 
                 <?php 
                     foreach($products as $product)
@@ -152,6 +97,21 @@
             </tbody>
         </table>
     </form>
+<?php
+
+
+$query = "select * from products";
+
+$result_set = mysqli_query($connection,$query);
+$totalNumberOfRecords = mysqli_num_rows($result_set);
+$totalNumberOfPages = ceil($totalNumberOfRecords/$limit);
+ var_dump($totalNumberOfPages);
+$html = "";
+for($i=1; $i <= $totalNumberOfPages; $i++){
+    $html .= "<a href='index.php?page_num=".$i."'>".$i."</a>"; 
+}
+echo $html;
+?>
     <div>
         <a href="logout.php">Logout</a>
     </div>
