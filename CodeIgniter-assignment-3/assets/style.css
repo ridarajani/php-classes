@@ -1,0 +1,45 @@
+@font-face{
+    font-family: roboto ;
+    src: url("Roboto-Light.ttf");
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    width: 70%;
+    margin: auto;
+    text-align: center;
+}
+.container nav{
+    display: block;
+    margin: 40px;
+}
+.container ul{
+    padding: 0;
+    text-align: center;
+}
+.container ul li{
+    display: inline;
+    margin: 20px;
+}
+.container ul li a{
+    text-decoration: none;
+    font-family: roboto;
+    border: 1px solid #66c2ff;
+    padding: 7px 10px;
+    border-radius: 5px;
+    color: #ffffff;
+    background-color: #66c2ff;
+}
+.container ul li a:hover{
+    color: #66c2ff;
+    background-color: #ffffff;
+    transition: 0.5s;
+}
+.container h1{
+    display: block;
+    padding: 20px;
+    margin: 0;
+    font-family: roboto;
+}
