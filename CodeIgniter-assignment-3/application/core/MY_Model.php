@@ -1,16 +1,41 @@
 <?php
+    
     class MY_Model extends CI_Model{
 
-        public function create_insert(){
-            $data = [];               
+         public $table;              
+         public function select(){
+             $query =    $this  ->db
+                                ->get($this->table)
+                                ->result();
+            if($query){
+                return $query;
+            }
+         }
+
+         public function insert_value($info_array){
+             $query = $this->db->insert($this->table, $info_array);
+                        
+             if($query){
+                echo "inserted";
+            }
+         }
+ 
+         public function update_value($info_array,$id){
+ 
+         $query = $this->db->where('id', $id)
+                           ->update($this->table, $info_array);
+
+            if($query){
+                echo "updated";
+            }
         }
-        public function read_select(){
-            $data = [];
-        }
-        public function update(){
-            $data = [];
-        }
-        public function delete(){
-            $data = [];
-        }
+
+         public function delete_value($id){
+             $query = $this->db ->where('id', $id)
+                                ->delete($this->table);
+                        
+             if($query){
+                echo "deleted";
+            }
+         }
     }
